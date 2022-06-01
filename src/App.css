@@ -1,38 +1,562 @@
-.App {
-  text-align: center;
+body {
+  background: url(bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.App-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header-container {
+  background-color: rgb(243, 243, 243);
+  box-shadow: 0px 0px 16px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  position: sticky;
+	top: 0;
+	left: 0;
+  z-index: 2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@-webkit-keyframes flight {
+  0% {transform: translate(-600px, 0px) rotateY(180deg);}
+  100% {transform: translate(600px, 0px) rotateY(180deg);}
+}
+
+@keyframes flight {
+  0% {transform: translate(-600px, 0px) rotateY(180deg);}
+  100% {transform: translate(600px, 0px) rotateY(180deg);}
+}
+
+.App-airplane {
+  width: 200px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  transform: rotateY(180deg);
+  z-index: -1;
+
+  -webkit-animation: flight 10s linear 0s normal;
+    animation: flight 10s linear 0s normal;
+    animation-iteration-count: 3;
+}
+
+@-webkit-keyframes repeatFlight {
+  0% {transform: translate(-600px, 0px) rotateY(180deg);}
+  100% {transform: translate(600px, 0px) rotateY(180deg);}
+}
+
+@keyframes repeatFlight {
+  0% {transform: translate(-600px, 0px) rotateY(180deg);}
+  100% {transform: translate(600px, 0px) rotateY(180deg);}
+}
+
+.airplane {
+  width: 200px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  transform: rotateY(180deg);
+  z-index: -1;
+
+  -webkit-animation: repeatFlight 10s linear 0s normal;
+    animation: repeatFlight 10s linear 0s normal;
+    animation-iteration-count: 3;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-size: 40px;
+  color: #17175c;
+  text-align: center;
+}
+
+.App-us {
+  background: url(usa-flag.jpeg);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.App-cities-container {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.App-cities {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.App-eachCity-container {
+  width: 500px;
+  height: 800px;
+  padding: 0px 60px;
+  margin: 20px;
+  background-color: rgb(243, 243, 243);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.App-deleteAll-btn {
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  padding: 12px 30px;
+  background-color: rgb(165, 10, 10);
   color: white;
+  margin: 50px;
+  box-shadow: 0px 0px 6px black;
 }
 
-.App-link {
-  color: #61dafb;
+.Carousel-general-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Carousel-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.CarouselNYC-arrow {
+  width: 18px;
+  height: 20px;
+  filter: invert(30%);
+}
+
+.Carousel-cityName {
+  font-size: 24px;
+  color: #17175c;
+}
+
+.Carousel-picture {
+  width: 420px;
+  height: 300px;
+}
+
+.Carousel-imageName {
+  font-size: 18px;
+  font-weight: 500;
+  color: #17175c;
+}
+
+.Carousel-address {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  padding:0px 15px;
+}
+
+.Carousel-description {
+  font-size: 16px;
+}
+
+.CarouselNYC-btn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin: 0px 15px;
+}
+
+.Carousel-showMore-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color:#5252ea;
+  font-size: 14px;
+}
+
+.Carousel-remove-btn {
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  padding: 10px 28px;
+  background-color: #1d1d74;
+  color: white;
+  margin-top: -35px;
+  margin-bottom: 50px;
+}
+
+.Carousel-remove-btn:hover {
+  transform: scale(1.05);
+}
+
+
+@media all and (max-width: 1200px) {
+  @-webkit-keyframes flight {
+    0% {transform: translate(-350px, 0px) rotateY(180deg);}
+    100% {transform: translate(350px, 0px) rotateY(180deg);}
   }
-  to {
-    transform: rotate(360deg);
+  
+  @keyframes flight {
+    0% {transform: translate(-350px, 0px) rotateY(180deg);}
+    100% {transform: translate(350px, 0px) rotateY(180deg);}
   }
+
+  .App-airplane {
+    -webkit-animation: flight 6s linear 0s normal;
+      animation: flight 6s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+  
+  @-webkit-keyframes repeatFlight {
+    0% {transform: translate(-350px, 0px) rotateY(180deg);}
+    100% {transform: translate(350px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes repeatFlight {
+    0% {transform: translate(-350px, 0px) rotateY(180deg);}
+    100% {transform: translate(350px, 0px) rotateY(180deg);}
+  }
+
+  .airplane {
+  
+    -webkit-animation: repeatFlight 6s linear 0s normal;
+      animation: repeatFlight 6s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+
+}
+
+@media all and (max-width: 900px) {
+  @-webkit-keyframes flight {
+    0% {transform: translate(-300px, 0px) rotateY(180deg);}
+    100% {transform: translate(300px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes flight {
+    0% {transform: translate(-300px, 0px) rotateY(180deg);}
+    100% {transform: translate(300px, 0px) rotateY(180deg);}
+  }
+
+  .App-airplane {
+    -webkit-animation: flight 5s linear 0s normal;
+      animation: flight 5s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+  
+  @-webkit-keyframes repeatFlight {
+    0% {transform: translate(-300px, 0px) rotateY(180deg);}
+    100% {transform: translate(300px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes repeatFlight {
+    0% {transform: translate(-300px, 0px) rotateY(180deg);}
+    100% {transform: translate(300px, 0px) rotateY(180deg);}
+  }
+
+  .airplane {
+  
+    -webkit-animation: repeatFlight 5s linear 0s normal;
+      animation: repeatFlight 5s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+
+}
+
+@media all and (max-width: 700px) {
+  @-webkit-keyframes flight {
+    0% {transform: translate(-220px, 0px) rotateY(180deg);}
+    100% {transform: translate(220px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes flight {
+    0% {transform: translate(-220px, 0px) rotateY(180deg);}
+    100% {transform: translate(220px, 0px) rotateY(180deg);}
+  }
+
+  .App-airplane {
+    -webkit-animation: flight 5s linear 0s normal;
+      animation: flight 5s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+  
+  @-webkit-keyframes repeatFlight {
+    0% {transform: translate(-220px, 0px) rotateY(180deg);}
+    100% {transform: translate(220px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes repeatFlight {
+    0% {transform: translate(-220px, 0px) rotateY(180deg);}
+    100% {transform: translate(220px, 0px) rotateY(180deg);}
+  }
+
+  .airplane {
+  
+    -webkit-animation: repeatFlight 5s linear 0s normal;
+      animation: repeatFlight 5s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+
+}
+
+@media all and (max-width: 600px) {
+  @-webkit-keyframes flight {
+    0% {transform: translate(-190px, 0px) rotateY(180deg);}
+    100% {transform: translate(190px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes flight {
+    0% {transform: translate(-190px, 0px) rotateY(180deg);}
+    100% {transform: translate(190px, 0px) rotateY(180deg);}
+  }
+
+  .App-airplane {
+    width: 150px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    -webkit-animation: flight 5s linear 0s normal;
+      animation: flight 5s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+  
+  @-webkit-keyframes repeatFlight {
+    0% {transform: translate(-190px, 0px) rotateY(180deg);}
+    100% {transform: translate(190px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes repeatFlight {
+    0% {transform: translate(-190px, 0px) rotateY(180deg);}
+    100% {transform: translate(190px, 0px) rotateY(180deg);}
+  }
+
+  .airplane {
+    width: 150px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    -webkit-animation: repeatFlight 5s linear 0s normal;
+      animation: repeatFlight 5s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+
+}
+
+@media all and (max-width: 500px) {
+  .App-header {
+    font-size: 30px;
+  }
+
+  @-webkit-keyframes flight {
+    0% {transform: translate(-120px, 0px) rotateY(180deg);}
+    100% {transform: translate(120px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes flight {
+    0% {transform: translate(-120px, 0px) rotateY(180deg);}
+    100% {transform: translate(120px, 0px) rotateY(180deg);}
+  }
+
+  .App-airplane {
+    width: 120px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    -webkit-animation: flight 4s linear 0s normal;
+      animation: flight 4s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+  
+  @-webkit-keyframes repeatFlight {
+    0% {transform: translate(-120px, 0px) rotateY(180deg);}
+    100% {transform: translate(120px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes repeatFlight {
+    0% {transform: translate(-120px, 0px) rotateY(180deg);}
+    100% {transform: translate(120px, 0px) rotateY(180deg);}
+  }
+
+  .airplane {
+    width: 120px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    -webkit-animation: repeatFlight 4s linear 0s normal;
+      animation: repeatFlight 4s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+
+  .App-eachCity-container {
+    width: 250px;
+  }
+
+  .Carousel-picture {
+    width: 280px;
+    height: 200px;
+  }
+
+  .Carousel-address {
+    font-size: 12px;
+  }
+
+  .Carousel-description {
+    font-size: 14px;
+    padding: 30px;
+  }
+
+}
+
+@media all and (max-width: 350px) {
+  .App-header {
+    font-size: 30px;
+  }
+
+  @-webkit-keyframes flight {
+    0% {transform: translate(-100px, 0px) rotateY(180deg);}
+    100% {transform: translate(100px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes flight {
+    0% {transform: translate(-100px, 0px) rotateY(180deg);}
+    100% {transform: translate(100px, 0px) rotateY(180deg);}
+  }
+
+  .App-airplane {
+    width: 120px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    -webkit-animation: flight 4s linear 0s normal;
+      animation: flight 4s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+  
+  @-webkit-keyframes repeatFlight {
+    0% {transform: translate(-100px, 0px) rotateY(180deg);}
+    100% {transform: translate(100px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes repeatFlight {
+    0% {transform: translate(-100px, 0px) rotateY(180deg);}
+    100% {transform: translate(100px, 0px) rotateY(180deg);}
+  }
+
+  .airplane {
+    width: 120px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    -webkit-animation: repeatFlight 4s linear 0s normal;
+      animation: repeatFlight 4s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+
+  .App-eachCity-container {
+    width: 200px;
+  }
+
+  .Carousel-picture {
+    width: 230px;
+    height: 160px;
+  }
+
+  .Carousel-address {
+    font-size: 12px;
+    padding: 0px 20px;
+  }
+
+  .Carousel-description {
+    font-size: 14px;
+    padding: 30px;
+  }
+
+  .CarouselNYC-arrow {
+    width: 12px;
+    height: 20px;
+    filter: invert(30%);
+  }
+
+}
+
+@media all and (max-width: 300px) {
+  .App-header {
+    font-size: 20px;
+  }
+
+  @-webkit-keyframes flight {
+    0% {transform: translate(-70px, 0px) rotateY(180deg);}
+    100% {transform: translate(70px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes flight {
+    0% {transform: translate(-70px, 0px) rotateY(180deg);}
+    100% {transform: translate(70px, 0px) rotateY(180deg);}
+  }
+
+  .App-airplane {
+    width: 90px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    -webkit-animation: flight 3s linear 0s normal;
+      animation: flight 3s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+  
+  @-webkit-keyframes repeatFlight {
+    0% {transform: translate(-70px, 0px) rotateY(180deg);}
+    100% {transform: translate(70px, 0px) rotateY(180deg);}
+  }
+  
+  @keyframes repeatFlight {
+    0% {transform: translate(-70px, 0px) rotateY(180deg);}
+    100% {transform: translate(70px, 0px) rotateY(180deg);}
+  }
+
+  .airplane {
+    width: 90px;
+    -webkit-animation: repeatFlight 3s linear 0s normal;
+      animation: repeatFlight 3s linear 0s normal;
+      animation-iteration-count: 3;
+  }
+
+  .App-eachCity-container {
+    width: 140px;
+  }
+
+  .Carousel-picture {
+    width: 140px;
+    height: 90px;
+  }
+
+  .Carousel-address {
+    font-size: 12px;
+    padding: 0px 20px;
+  }
+
+  .Carousel-description {
+    font-size: 14px;
+    padding: 30px;
+  }
+
+  .CarouselNYC-arrow {
+    width: 12px;
+    height: 16px;
+    filter: invert(30%);
+  }
+
 }
