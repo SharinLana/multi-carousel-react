@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -358,6 +359,25 @@ body {
       animation-iteration-count: 3;
   }
 
+  .App-eachCity-container {
+    width: 300px;
+  }
+
+  .Carousel-picture {
+    width: 320px;
+    height: 220px;
+  }
+
+  .Carousel-address {
+    font-size: 12px;
+    padding: 0px 30px;
+  }
+
+  .Carousel-description {
+    font-size: 14px;
+    padding: 30px;
+  }
+
 }
 
 @media all and (max-width: 500px) {
@@ -414,6 +434,7 @@ body {
 
   .Carousel-address {
     font-size: 12px;
+    padding: 0px 30px;
   }
 
   .Carousel-description {
@@ -423,7 +444,13 @@ body {
 
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 400px) {
+  .App-main-container {
+    margin-left: 10px;
+  }
+}
+
+@media all and (max-width: 360px) {
   .App-header {
     font-size: 30px;
   }
