@@ -494,13 +494,17 @@ body {
   }
 
   .App-eachCity-container {
-    width: 200px;
+    width: 180px;
   }
 
   .Carousel-picture {
-    width: 230px;
-    height: 160px;
+    width: 200px;
+    height: 150px;
   }
+	
+ .Carousel-imageName {
+  font-size: 15px;
+ }
 
   .Carousel-address {
     font-size: 12px;
